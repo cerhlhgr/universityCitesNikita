@@ -17,7 +17,7 @@ func main() {
 	})
 
 	server := http.Server{
-		Addr:    "2.59.42.22:8000",
+		Addr:    "2.59.42.22:80",
 		Handler: router,
 	}
 
