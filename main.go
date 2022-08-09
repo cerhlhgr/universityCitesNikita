@@ -13,7 +13,7 @@ func main() {
 		log.Println(r.Form)
 
 		w.WriteHeader(200)
-		w.Write([]byte("ok"))
+		w.Write([]byte("797dfb18"))
 	})
 
 	server := http.Server{
