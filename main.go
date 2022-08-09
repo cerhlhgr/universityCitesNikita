@@ -10,10 +10,10 @@ func main() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		log.Println(r.Form)
+		log.Println(r.PostFormValue("type"))
 
 		w.WriteHeader(200)
-		w.Write([]byte("797dfb18"))
+		w.Write([]byte("ok"))
 	})
 
 	server := http.Server{
