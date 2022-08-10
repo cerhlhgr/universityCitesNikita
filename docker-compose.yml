@@ -12,3 +12,9 @@ services:
     ports:
       - 8123:8123
     restart: always
+    networks:
+      - somenetwork
+
+networks:
+  somenetwork:
+    driver: bridge
