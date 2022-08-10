@@ -22,7 +22,7 @@ func main() {
 	})
 
 	server := http.Server{
-		Addr:    "2.59.42.22:8123",
+		Addr:    ":8123",
 		Handler: router,
 	}
 
