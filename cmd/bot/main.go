@@ -10,7 +10,7 @@ func main() {
 	log.Println("Запустился")
 	router := mux.NewRouter()
 
-	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	router.HandleFunc("/nikitos", func(w http.ResponseWriter, r *http.Request) {
 		log.Println(r.PostFormValue("type"))
 
 		w.WriteHeader(200)
