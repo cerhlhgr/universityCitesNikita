@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -11,7 +12,7 @@ var access_token string = "333687e3236c2cf0a7f24a0d7832cf092a3499b5e1f70b66c8c51
 
 type vars struct {
 	Type   string `json:"type"`
-	Object map[string]string
+	Object map[string]interface{}
 }
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 		switch params.Type {
 		case "message_new":
 			if params.Object["text"] == "Показать города" {
-				http.Get("https://api.vk.com/method/database.getCities?" + "user_id=" + params.Object["from_id"] + "message=" + "хуй")
+				http.Get("https://api.vk.com/method/database.getCities?" + "user_id=" + fmt.Sprintf("%v", params.Object["from_id"]) + "message=" + "хуй")
 				//get, err := http.Get("https://api.vk.com/method/database.getCities?v=5.52&access_token=" + access_token)
 				if err != nil {
 					//decoder = json.NewDecoder(get.Body)
