@@ -11,7 +11,7 @@ var access_token string = "333687e3236c2cf0a7f24a0d7832cf092a3499b5e1f70b66c8c51
 
 type vars struct {
 	Type   string `json:"type"`
-	Object map[string]string{}
+	Object map[string]string
 }
 
 func main() {
