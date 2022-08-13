@@ -14,7 +14,7 @@ func main() {
 		log.Println(r.PostFormValue("type"))
 
 		w.WriteHeader(200)
-		_, err := w.Write([]byte("ok"))
+		_, err := w.Write([]byte("2d085acf"))
 		if err != nil {
 			log.Println(err.Error())
 			return
