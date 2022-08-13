@@ -36,7 +36,7 @@ func main() {
 		case "message_new":
 			if params.Object["message"]["text"] == "asd" {
 				log.Println(fmt.Sprintf("%v", params.Object["from_id"]))
-				_, err := http.Get("https://api.vk.com/method/messages.send?" + "user_id=" + fmt.Sprintf("%v", params.Object["from_id"]) + "message=" + "хуй")
+				_, err := http.Get("https://api.vk.com/method/messages.send?" + "user_id=" + fmt.Sprintf("%v", params.Object["message"]["from_id"]) + "message=" + "хуй")
 				if err != nil {
 					log.Println(err.Error())
 					return
