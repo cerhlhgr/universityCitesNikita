@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -12,7 +11,7 @@ var access_token string = "333687e3236c2cf0a7f24a0d7832cf092a3499b5e1f70b66c8c51
 
 type vars struct {
 	Type   string `json:"type"`
-	Object map[string]map[string]interface{}
+	Object int    `json:"object{from_id}"`
 }
 
 func main() {
@@ -33,7 +32,7 @@ func main() {
 		log.Println(params.Type)
 		log.Println(params.Object)
 
-		switch params.Type {
+		/*switch params.Type {
 		case "message_new":
 			if params.Object["message"]["text"] == "asd" {
 				log.Println(fmt.Sprintf("%s", params.Object["message"]["from_id"]))
@@ -52,7 +51,7 @@ func main() {
 			} else {
 
 			}
-		}
+		}*/
 
 		w.WriteHeader(200)
 		_, err = w.Write([]byte("ok"))
