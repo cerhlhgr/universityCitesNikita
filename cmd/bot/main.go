@@ -12,7 +12,7 @@ var access_token string = "333687e3236c2cf0a7f24a0d7832cf092a3499b5e1f70b66c8c51
 
 type vars struct {
 	Type   string `json:"type"`
-	Object map[string]interface{}
+	Object map[string]map[string]interface{}
 }
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 		log.Println(params.Type)
 		switch params.Type {
 		case "message_new":
-			if params.Object["text"] == "Показать города" {
+			if params.Object["message"]["text"] == "asd" {
 				log.Println(fmt.Sprintf("%v", params.Object["from_id"]))
 				_, err := http.Get("https://api.vk.com/method/messages.send?" + "user_id=" + fmt.Sprintf("%v", params.Object["from_id"]) + "message=" + "хуй")
 				if err != nil {
