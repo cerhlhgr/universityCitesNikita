@@ -5,11 +5,11 @@ RUN mkdir -p /bot
 ADD . /bot
 WORKDIR /bot
 
-RUN apk update && apk add --no-cache git ca-certificates && update-ca-certificates
-
 # Build the binary with go build
 RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 \
     go build -o ./bin/app ./cmd/bot/main.go
+
+RUN apk update && apk add --no-cache git ca-certificates && update-ca-certificates
 
 # Final stage: Run the binary
 FROM scratch
