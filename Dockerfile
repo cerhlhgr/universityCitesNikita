@@ -15,6 +15,5 @@ RUN apk update && apk add --no-cache git ca-certificates && update-ca-certificat
 FROM scratch
 
 # and finally the binary
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /bot/bin/app /app
 CMD ["/app"]
