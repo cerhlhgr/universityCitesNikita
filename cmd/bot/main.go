@@ -35,7 +35,7 @@ func main() {
 		switch params.Type {
 		case "message_new":
 			if params.Object["text"] == "Показать города" {
-				_, err := http.Get("https://api.vk.com/method/database.getCities?" + "user_id=" + fmt.Sprintf("%v", params.Object["from_id"]) + "message=" + "хуй")
+				_, err := http.Get("https://api.vk.com/method/messages.send?" + "user_id=" + fmt.Sprintf("%v", params.Object["from_id"]) + "message=" + "хуй")
 				if err != nil {
 					log.Println(err.Error())
 					return
